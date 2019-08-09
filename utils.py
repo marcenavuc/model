@@ -93,9 +93,5 @@ def trainGenerator(batch_size,train_path,image_folder,mask_folder,aug_dict,image
         seed = seed)
     train_generator = zip(image_generator, mask_generator)
     for (img,mask) in train_generator:
-        img = img / 255.
-        mask = mask / 255.
-        mask[mask > 0.5] = 1
-        mask[mask <= 0.5] = 0
-        #img,mask = adjustData(img,mask,flag_multi_class,num_class)
+        img,mask = adjustData(img,mask,flag_multi_class,num_class)
     yield (img,mask)
