@@ -1,7 +1,7 @@
+from keras.preprocessing.image import ImageDataGenerator
 from keras.models import *
 from keras.layers import *
 from keras.optimizers import *
-from keras.preprocessing.image import ImageDataGenerator
 import numpy as np
 
 def kaggle_unet(pretrained_weights = None,input_size = (256,256,1)):
